@@ -54,10 +54,10 @@ fun UpperPart(){
         ,verticalArrangement = Arrangement.Center
     ) {
         Image(painter = image, contentDescription = null, modifier = Modifier
-            .height(60.dp)
-            .width(80.dp)
+            .height(90.dp)
+            .width(100.dp).padding(bottom = 8.dp)
         )
-        Text(text = "Thomas Paravaitsis", fontSize = 30.sp)
+        Text(text = "Thomas Paravaitsis", fontSize = 30.sp, modifier = Modifier.padding(bottom = 10.dp))
         Text(text = "Android App Developer")
     }
 }
