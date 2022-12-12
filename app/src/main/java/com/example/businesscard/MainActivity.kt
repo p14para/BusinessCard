@@ -4,10 +4,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Call
+import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material.icons.rounded.Face
 import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -27,8 +31,10 @@ class MainActivity : ComponentActivity() {
             BusinessCardTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black),
+                    color = MaterialTheme.colors.surface,
                 ) {
                     BusinessCard()
                 }
@@ -41,15 +47,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BusinessCard() {
+
     UpperPart()
     LowerPart()
+
 }
 
 @Composable
 fun UpperPart(){
     val image = painterResource(R.drawable.android_logo)
     Column(horizontalAlignment = Alignment.CenterHorizontally
-        ,verticalArrangement = Arrangement.Center
+        ,verticalArrangement = Arrangement.Center, modifier = Modifier.background(Color(0xFF243447))
     ) {
         Image(painter = image, contentDescription = null, modifier = Modifier
             .height(90.dp)
@@ -81,7 +89,7 @@ fun LowerPart(){
                 .weight(1f)
             )
             {
-                Icon(Icons.Rounded.ShoppingCart
+                Icon(Icons.Rounded.Call
                     , contentDescription = null
                     , tint = Color(61, 220, 131))
             }
@@ -95,7 +103,7 @@ fun LowerPart(){
             }
         }
 
-
+        Divider(color = Color.White, thickness = 1.dp)
         Row(modifier= Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -104,7 +112,7 @@ fun LowerPart(){
                 .weight(1f)
             )
             {
-                Icon(Icons.Rounded.ShoppingCart
+                Icon(Icons.Rounded.Face
                     , contentDescription = null
                     , tint = Color(61, 220, 131))
             }
@@ -114,11 +122,11 @@ fun LowerPart(){
                 .padding(start = 30.dp)
             )
             {
-                Text(text = "+30 694 098 0056", color = Color.White)
+                Text(text = "Facebook -> Μακης Παραβαιτσης", color = Color.White)
             }
         }
 
-
+        Divider(color = Color.White, thickness = 1.dp)
         Row(modifier= Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -127,7 +135,7 @@ fun LowerPart(){
                 .weight(1f)
             )
             {
-                Icon(Icons.Rounded.ShoppingCart
+                Icon(Icons.Rounded.Email
                     , contentDescription = null
                     , tint = Color(61, 220, 131))
             }
@@ -137,7 +145,7 @@ fun LowerPart(){
                 .padding(start = 30.dp)
             )
             {
-                Text(text = "+30 694 098 0056", color = Color.White)
+                Text(text = "thomaspara96@gmail.com", color = Color.White)
             }
         }
         
